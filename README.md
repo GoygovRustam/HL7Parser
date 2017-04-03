@@ -6,7 +6,7 @@ Gets raw hl7 message string and returns structured json object of the hl7 messag
 # Steps:
 
 # 1 - Install library.
-npm install --save hl7parser
+npm i health-level-seven-parser
 
 # 2 - Import library into your project.
 import { Hl7Parser } from './hl7parser';
