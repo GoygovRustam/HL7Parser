@@ -15,8 +15,8 @@ import { Hl7Parser } from './hl7parser';
 var hl7Parser = new Hl7Parser();
 
 # Methods
-raw hl7 -> script Hl7Message:
-hl7Parser.getHl7Model(rawHl7Message: string)
+#### raw hl7 -> script Hl7Message:
+ > `hl7Parser.getHl7Model(rawHl7Message: string)`
 
-typescript Hl7Message -> raw hl7:
-hl7Parser.getHl7Message(hl7Message:Hl7Message); (to be implemented)
+#### typescript Hl7Message -> raw hl7:
+> `hl7Parser.getHl7Message(hl7Message:Hl7Message); (to be implemented)`
