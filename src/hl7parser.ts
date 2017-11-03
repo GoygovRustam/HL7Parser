@@ -20,6 +20,7 @@ export class Hl7Parser {
     let segment:Segment = new Segment();
     let rawSegmentArr = rawSegment.split('|');
     segment.name = rawSegmentArr[0];
+    segment.value = rawSegment;
     let i = 0;
     segment.children = rawSegmentArr.map(rawElement => {
       return this.buildElement(rawElement, segment.name + "-" + i++);
@@ -30,12 +31,13 @@ export class Hl7Parser {
   private buildElement(rawElement:string, elementName:string):Element{
     let field = new Field();
     if (rawElement == "^~\\&" || rawElement == "^~&" || rawElement == "^~\\@" || rawElement == "^~@"){
-        field.value = rawElement;
         field.name = elementName;
+        field.value = rawElement;
         return field;
     }else if (rawElement.indexOf("~") !== -1 && rawElement != "^~\\&" && rawElement != "^~\\" && rawElement != "\r" && rawElement !="\n"){	
         let repeatingField = new RepeatingField();
         repeatingField.name = elementName;
+        repeatingField.value = rawElement;
         let i = 1;
         repeatingField.children = rawElement.split('~').map(rawRepeatingFieldElement => {
               return this.buildElement(rawRepeatingFieldElement, elementName + "/" + i++);
@@ -44,6 +46,7 @@ export class Hl7Parser {
 		}else if(rawElement.indexOf("^") !== -1){
         let subField = new SubField();
         subField.name = elementName;
+        subField.value = rawElement;
         let i = 0;
         if(elementName.indexOf("/") !== -1){
           elementName = elementName.slice(0, elementName.indexOf("/"));
