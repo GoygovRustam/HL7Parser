@@ -43,13 +43,14 @@ export class Hl7Parser {
         return repeatingField;
 		}else if(rawElement.indexOf("^") !== -1){
         let subField = new SubField();
-         let i = 0;
-         if(elementName.indexOf("/") !== -1){
-           elementName = elementName.slice(0, elementName.indexOf("/"));
-         }
+        subField.name = elementName;
+        let i = 0;
+        if(elementName.indexOf("/") !== -1){
+          elementName = elementName.slice(0, elementName.indexOf("/"));
+        }
         subField.children = rawElement.split('^').map(rawSubField => {
               return this.buildElement(rawSubField,elementName + "." + i++);
-            })
+            });
         return subField;
     }
    
