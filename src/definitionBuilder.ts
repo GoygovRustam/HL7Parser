@@ -24,6 +24,8 @@ export class DefinitionBuilder{
     }
 
     private addDefinition(children: Segment[]){
+        if(!children) return;
+        
         for(var i = 0; i < children.length; i++){
             children[i].definition = this.getDefinition(children[i].name);
             this.addDefinition(children[i].children);
