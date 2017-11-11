@@ -1,8 +1,8 @@
 {
   "name": "health-level-seven-parser",
-  "version": "1.0.5",
+  "version": "1.1.2",
   "description": "Typescript library to parse hl7 message into a typescript object and back",
-  "main": "src/hl7parser.ts",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
