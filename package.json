@@ -1,10 +1,12 @@
 {
   "name": "health-level-seven-parser",
-  "version": "1.1.4",
+  "version": "1.1.53",
   "description": "Typescript library to parse hl7 message into a typescript object and back",
-  "main": "index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "ts-node ./src/index.ts",
+    "prepublishOnly": "tsc -p ./ --outDir ./dist/"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/GoygovRustam/HL7Parser/issues"
   },
-  "homepage": "https://github.com/GoygovRustam/HL7Parser#readme"
+  "homepage": "https://github.com/GoygovRustam/HL7Parser#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^8.0.53",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.1"
+  }
 }
