@@ -6,7 +6,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "run": "ts-node ./src/index.ts",
-    "prepublishOnly": "tsc -p ./ --outDir ./dist/"
+    "prepublishOnly": "tsc -p ./ --outDir ./dist/",
+    "test": "jasmine-ts \"spec/**/*.spec.ts\""
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,9 @@
   "homepage": "https://github.com/GoygovRustam/HL7Parser#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/jasmine": "^2.8.2",
     "@types/node": "^8.0.53",
+    "jasmine-ts": "^0.2.1",
     "ts-node": "^3.3.0",
     "typescript": "^2.6.1"
   }

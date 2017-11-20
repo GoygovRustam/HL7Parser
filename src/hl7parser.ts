@@ -16,6 +16,8 @@ export class Hl7Parser {
    "withDefinitions" flag indicates whether to build pure model or with definitions on every hl7 field 
    */
   public getHl7Model(rawHl7Message:string, withDefinitions:boolean = false){
+    if(!rawHl7Message) throw new Error("Hl7 message was not provided");
+
     if(withDefinitions){
       let hl7Message = this.buildHl7Message(rawHl7Message);
 
@@ -43,10 +45,9 @@ export class Hl7Parser {
   }
 
   private buildSegment(rawSegment:string):Segment{
-    let segment:Segment = new Segment();
     let rawSegmentArr = rawSegment.split('|');
-    segment.name = rawSegmentArr[0];
-    segment.value = rawSegment;
+    let segment:Segment = new Segment(rawSegmentArr[0], rawSegment);
+
     let i = 0;
     segment.children = rawSegmentArr.map(rawElement => {
       //If element is special then skip one number
@@ -59,37 +60,34 @@ export class Hl7Parser {
   }
 
   private buildElement(rawElement:string, elementName:string){
-    let field = new Field();
     if (rawElement == "^~\\&" || rawElement == "^~&" || rawElement == "^~\\@" || rawElement == "^~@"){
-        field.name = elementName;
-        field.value = rawElement;
-        return field;
-    }else if (rawElement.indexOf("~") !== -1 && rawElement != "^~\\&" && rawElement != "^~\\" && rawElement != "\r" && rawElement !="\n"){	
-        let repeatingField = new RepeatingField();
-        repeatingField.name = elementName;
-        repeatingField.value = rawElement;
+        return new Field(elementName, rawElement);
+    }
+    else if (rawElement.indexOf("~") !== -1 && rawElement != "^~\\&" && rawElement != "^~\\" && rawElement != "\r" && rawElement !="\n"){	
+        let repeatingField = new RepeatingField(elementName,rawElement);
+
         let i = 1;
         repeatingField.children = rawElement.split('~').map(rawRepeatingFieldElement => {
               return this.buildElement(rawRepeatingFieldElement, elementName + "/" + i++);
-          })
+        });
         return repeatingField;
-		}else if(rawElement.indexOf("^") !== -1){
-        let subField = new SubField();
-        subField.name = elementName;
-        subField.value = rawElement;
+    }
+    else if(rawElement.indexOf("^") !== -1){
+        let subField = new SubField(elementName, rawElement);
+
         let i = 0;
         if(elementName.indexOf("/") !== -1){
           elementName = elementName.slice(0, elementName.indexOf("/"));
         }
+
         subField.children = rawElement.split('^').map(rawSubField => {
               return this.buildElement(rawSubField,elementName + "." + i++);
-            });
+        });
+
         return subField;
     }
    
-    field.value = rawElement;
-    field.name = elementName;
-    return field;
+    return new Field(elementName, rawElement);
   }
 }
 

@@ -1,8 +1,11 @@
 import { FieldDefinition } from './fieldDefinition';
 
 export class Element {
-    name:string;
-    value:string;
+    constructor(
+        public name:string,
+        public value:string
+    ) {
+    }
     definition: FieldDefinition;
     children:Element[];
 }

@@ -7,6 +7,8 @@ import { FieldDefinitions} from './data/fieldDefinitions';
 export class DefinitionBuilder{
     /** Adds field definition (Description, length) to every field of the hl7 message*/
     public addDefinitionToHl7Message(hl7Message: Hl7Message){
+        if(!hl7Message || !hl7Message.children) throw new Error("hl7Message is not provided or incorrect hl7Message is provided");
+        
         this.addDefinition(hl7Message.children)
     }
 
