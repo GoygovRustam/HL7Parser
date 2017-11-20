@@ -14,12 +14,12 @@ Gets raw hl7 message string and returns structured object of the hl7 message.
 # 3 - Create instance of the class Hl7Parser.
 >`var hl7Parser = new Hl7Parser();`
 
-> `definitionBuilder.addDefinitionToHl7Message(this.hl7Message);`
+# Ready to use!
 
 # Methods
-#### raw hl7 -> typescript object Hl7Message:
+#### raw hl7 ->  object Hl7Message:
  > `hl7Parser.getHl7Model(rawHl7Message: string, withDefinitions:boolean (optional))`
  "withDefinitions" flag with add definitions to the object, so every field in Hl7 will have definition (description and length for now). 
 
-#### typescript object Hl7Message -> raw hl7:
+#### object Hl7Message -> raw hl7:
 > `hl7Parser.getHl7Message(hl7Message:Hl7Message); (to be implemented)`
