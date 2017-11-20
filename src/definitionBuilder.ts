@@ -1,4 +1,3 @@
-import { Version } from './models/version';
 import { Hl7Message } from './models/hl7message.model';
 import { Segment } from './models/segment.model';
 

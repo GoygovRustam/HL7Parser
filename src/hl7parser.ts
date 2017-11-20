@@ -4,13 +4,9 @@ import { Hl7Message } from './models/hl7message.model';
 import { RepeatingField } from './models/repeating-field.model';
 import { Segment } from './models/segment.model';
 import { SubField } from './models/sub-field.model';
-
 import { DefinitionBuilder } from './definitionBuilder';
 
 export class Hl7Parser {
-  constructor(public definitionbuilder: DefinitionBuilder) {
-  }
-
    /** Builds an Hl7Message model from Raw hl7 string. 
     * 
    "withDefinitions" flag indicates whether to build pure model or with definitions on every hl7 field 
@@ -18,10 +14,11 @@ export class Hl7Parser {
   public getHl7Model(rawHl7Message:string, withDefinitions:boolean = false){
     if(!rawHl7Message) throw new Error("Hl7 message was not provided");
 
+    let definitionbuilder = new DefinitionBuilder();
     if(withDefinitions){
       let hl7Message = this.buildHl7Message(rawHl7Message);
 
-      this.definitionbuilder.addDefinitionToHl7Message(hl7Message);
+      definitionbuilder.addDefinitionToHl7Message(hl7Message);
 
       return hl7Message;
     }

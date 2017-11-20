@@ -1,10 +1,8 @@
 import { Hl7Parser } from '../src/hl7parser';
 import { Hl7Message } from '../src/models/hl7message.model';
-import { DefinitionBuilder } from '../src/definitionBuilder';
 
 describe("Hl7 Parser",  () => {
-    let definitionBuilder = new DefinitionBuilder();
-    let hl7Parser = new Hl7Parser(definitionBuilder);
+    let hl7Parser = new Hl7Parser();
 
     it("Should throw error if no hl7Message is provided", () =>{  
         expect(() => { hl7Parser.getHl7Model(null) }).toThrow(new Error("Hl7 message was not provided"));
