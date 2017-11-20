@@ -1,7 +1,7 @@
 {
   "name": "health-level-seven-parser",
-  "version": "1.1.53",
-  "description": "Typescript library to parse hl7 message into a typescript object and back",
+  "version": "1.2.0",
+  "description": "Typescript library to parse hl7 message into a typescript/javascript object and back",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
