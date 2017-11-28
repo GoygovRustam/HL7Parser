@@ -4,7 +4,6 @@ export class FieldDefinitions{
     public static getFieldDefinition(fieldName:string){
         return this.fields[fieldName];
     }
-
     //HL7 Version 2.6
     static fields = {
         //ACC: Accident
@@ -536,7 +535,7 @@ export class FieldDefinitions{
         "UB1-23":new FieldDefinition("UB-82 Locator 45 ",17 ),
 
         //UB2: UB92 Data
-        "UB2":new FieldDefinition("UB92 Data",4 ),
+        "UB2":new FieldDefinition("UB92 Data"),
 
         "UB2-1":new FieldDefinition(" Set ID - UB2 ",4 ),
         "UB2-2":new FieldDefinition(" Co-Insurance Days ",3 ),
@@ -555,6 +554,68 @@ export class FieldDefinitions{
         "UB2-15":new FieldDefinition("UB92 Locator 57 ",27 ),
         "UB2-16":new FieldDefinition("UB92 Locator 78 ",2 ),
         "UB2-17":new FieldDefinition("Special Visit Count ",3 ),
+
+       //GT1: Guarantor
+       "GT1":new FieldDefinition("Guarantor"),
+
+       
+       "GT1-1":new FieldDefinition("Set ID - GT1",4),
+       "GT1-2":new FieldDefinition("Guarantor Number",250),
+       "GT1-3":new FieldDefinition("Guarantor Name",250),
+       "GT1-4":new FieldDefinition("Guarantor Spouse Name",250),
+       "GT1-5":new FieldDefinition("Guarantor Address",250),
+       "GT1-6":new FieldDefinition("Guarantor Ph Num - Home",250),
+       "GT1-7":new FieldDefinition("Guarantor Ph Num - Business",250	),
+       "GT1-8":new FieldDefinition("Guarantor Date/Time Of Birth",24),
+       "GT1-9":new FieldDefinition("Guarantor Administrative Sex",1),
+       "GT1-10":new FieldDefinition("Guarantor Type",2),
+       "GT1-11":new FieldDefinition("Guarantor Relationship",250),
+       "GT1-12":new FieldDefinition("Guarantor SSN",11),
+       "GT1-13":new FieldDefinition("Guarantor Date - Begin",8),
+       "GT1-14":new FieldDefinition("Guarantor Date - End",8),
+       "GT1-15":new FieldDefinition("Guarantor Priority",2),
+       "GT1-16":new FieldDefinition("Guarantor Employer Name",250),
+       "GT1-17":new FieldDefinition("Guarantor Employer Address",250),
+       "GT1-18":new FieldDefinition("Guarantor Employer Phone Number",250),
+       "GT1-19":new FieldDefinition("Guarantor Employee ID Number",250),
+       "GT1-20":new FieldDefinition("Guarantor Employment Status",2),
+       "GT1-21":new FieldDefinition("Guarantor Organization Name",2),
+       "GT1-22":new FieldDefinition("Guarantor Billing Hold Flag",1),
+       "GT1-23":new FieldDefinition("Guarantor Credit Rating Code",250),
+       "GT1-24":new FieldDefinition("Guarantor Death Date And Time",24),
+       "GT1-25":new FieldDefinition("Guarantor Death Flag",1),
+       "GT1-26":new FieldDefinition("Guarantor Charge Adjustment Code",250),
+       "GT1-27":new FieldDefinition("Guarantor Household Annual Income",10),
+       "GT1-28":new FieldDefinition("Guarantor Household Size",3),
+       "GT1-29":new FieldDefinition("Guarantor Employer ID Number",250),
+       "GT1-30":new FieldDefinition("Guarantor Marital Status Code",250),
+       "GT1-31":new FieldDefinition("Guarantor Hire Effective Date",8),
+       "GT1-32":new FieldDefinition("Employment Stop Date",8),
+       "GT1-33":new FieldDefinition("Living Dependency",2),
+       "GT1-34":new FieldDefinition("Ambulatory Status",2),
+       "GT1-35":new FieldDefinition("Citizenship",705),
+       "GT1-36":new FieldDefinition("Primary Language",705),
+       "GT1-37":new FieldDefinition("Living Arrangement",2),
+       "GT1-38":new FieldDefinition("Publicity Code",705),
+       "GT1-39":new FieldDefinition("Protection Indicator",1),
+       "GT1-40":new FieldDefinition("Student Indicator",2),
+       "GT1-41":new FieldDefinition("Religion",705),
+       "GT1-42":new FieldDefinition("Mother's Maiden Name",250),
+       "GT1-43":new FieldDefinition("Nationality",705),
+       "GT1-44":new FieldDefinition("Ethnic Group",705),
+       "GT1-45":new FieldDefinition("Contact Person's Name",250),
+       "GT1-46":new FieldDefinition("Contact Person's Telephone Number",250),
+       "GT1-47":new FieldDefinition("Contact Reason",705),
+       "GT1-48":new FieldDefinition("Contact Relationship",3),
+       "GT1-49":new FieldDefinition("Job Title",20),
+       "GT1-50":new FieldDefinition("Job Code/Class",20),
+       "GT1-51":new FieldDefinition("Guarantor Employer's Organization Name",250),
+       "GT1-52":new FieldDefinition("Handicap",2),
+       "GT1-53":new FieldDefinition("Job Status",2),
+       "GT1-54":new FieldDefinition("Guarantor Financial Class",50),
+       "GT1-55":new FieldDefinition("Guarantor Race",250),
+       "GT1-56":new FieldDefinition("Guarantor Birth Place",250),
+       "GT1-57":new FieldDefinition("VIP Indicator",2),
     }
     
 }
