@@ -1,4 +1,4 @@
-import { FieldDefinition } from '../models/FieldDefinition';
+import { FieldDefinition } from '../models/fieldDefinition';
 
 export class FieldDefinitions{
     public static getFieldDefinition(fieldName:string){
