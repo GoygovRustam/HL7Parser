@@ -1,5 +1,5 @@
 {
-  "name": "health-level-seven-parser",
+  "name": "@amida-tech/hl7-parser",
   "version": "1.2.3",
   "description": "Typescript library to parse hl7 message into a typescript/javascript object and back",
   "main": "./dist/index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GoygovRustam/HL7Parser.git"
+    "url": "git+https://github.com/Manhydra/HL7Parser.git"
   },
   "keywords": [
     "Hl7",
@@ -21,11 +21,17 @@
     "HIS"
   ],
   "author": "Rustam Goygov <GoygovRustam@gmail.com>",
+  "contributors": [
+    {
+      "name": "Marc Sylvestre",
+      "email": "marc.sylvestre@manhydra.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/GoygovRustam/HL7Parser/issues"
+    "url": "https://github.com/Manhydra/HL7Parser/issues"
   },
-  "homepage": "https://github.com/GoygovRustam/HL7Parser#readme",
+  "homepage": "https://github.com/Manhydra/HL7Parser#readme",
   "devDependencies": {
     "@types/jest": "^28.1.7",
     "@types/node": "^18.7.9",
