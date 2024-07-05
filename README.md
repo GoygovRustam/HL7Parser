@@ -7,12 +7,12 @@ Gets raw hl7 message string and returns structured object of the hl7 message.
 
 ### 1 - Install library.
 ```sh
-npm i @amida-tech/hl7-parser
+npm i @manhydra/hl7-parser
 ```
 
 ### 2 - Import library into your project.
 ```javascript
-import { Hl7Message, Hl7Parser } from '@amida-tech/hl7-parser';
+import { Hl7Message, Hl7Parser } from '@manhydra/hl7-parser';
 ```
 
 ### 3 - Create instance of the class Hl7Parser.
